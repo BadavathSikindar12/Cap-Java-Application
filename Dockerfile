@@ -6,4 +6,4 @@ FROM openjdk:latest
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8091
-CMD ["java","EmployeeService.java","-jar","app.jar"]
+CMD ["java","-jar","app.jar"]
