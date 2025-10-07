@@ -7,8 +7,5 @@ FROM tomcat:9.0
 WORKDIR /usr/local/tomcat/webapps/
 COPY --from=build /app/target/maven-web-application.war ./ROOT.WAR 
 
-FROM openjdk:latest
-WORKDIR /app
-COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8091
 CMD ["catalina.sh","run"]
